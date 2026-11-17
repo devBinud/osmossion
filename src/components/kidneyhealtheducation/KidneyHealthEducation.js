@@ -338,10 +338,17 @@ margin-left:20px;
 }
 
 /* Timeline */
-.khe__timeline { position: relative; padding-left: 18px; border-left: 2px dashed #dbe2ef; display: grid; gap: 14px; }
+.khe__timeline { position: relative; padding-left: 18px; display: grid; gap: 14px; }
 .khe__timeItem h4 { margin: 0 0 4px; font-size: 16px; }
 .khe__timeItem p { margin: 0; font-size: 15px; color: #55537a; }
 .khe__timeItem { position: relative; }
+/* Line joining each dot to the next one (dot spans 5px–17px from the item top; gap between items is 14px) */
+.khe__timeItem:not(:last-child)::after {
+  content: ""; position: absolute; left: 0; width: 2px;
+  top: 17px; bottom: -19px;
+  background: linear-gradient(180deg, #8B639B, #c9b6dc);
+  border-radius: 2px;
+}
 .khe__timeDot { position: absolute; left: -5px;
     top: 5px;
  width: 12px; height: 12px; background: var(--brand); border-radius: 50%; box-shadow: 0 0 0 4px rgba(139,99,155,.25); }

@@ -28,47 +28,6 @@ const PublicHome = () => {
       <Blogs />
       <FAQs />
       <ContactUs />
-
-      {/* Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/916901740874"
-        className="whatsapp-float"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-          alt="WhatsApp Chat"
-          className="whatsapp-icon"
-        />
-      </a>
-
-      <style>{`
-  .whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25d366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 1000;
-    transition: transform 0.2s ease, background 0.3s ease;
-  }
-  .whatsapp-float:hover {
-    background-color: #2fb866ff;
-  }
-  .whatsapp-icon {
-    width: 35px;
-    height: 35px;
-  }
-`}</style>
-
-
     </div>
   );
 };
