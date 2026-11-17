@@ -7,7 +7,6 @@ import Categories from '../../components/categories/Categories.jsx';
 import CTAHome from '../../components/cta/CTAHome.jsx';
 import ContactUs from '../../components/contactus/Contact.jsx';
 import WhatsNew from '../../components/whatsNew/WhatsNew.js'
-import CenterOfExcellence from '../../components/whatsNew/CenterOfExcellence.js'
 import FAQs from "../../components/whatsNew/FAQs.js"
 import Blogs from "../../components/blogs/Blogs.js"
 import KidneyHealthEducation from "../../components/kidneyhealtheducation/KidneyHealthEducation.js"

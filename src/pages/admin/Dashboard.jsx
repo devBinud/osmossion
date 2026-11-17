@@ -68,6 +68,14 @@ const Dashboard = () => {
             <h3>Total Categories</h3>
             <p>{totalCategories}</p>
           </div>
+          <div className={styles.card}>
+            <h3>Added Today</h3>
+            <p>{addedToday}</p>
+          </div>
+          <div className={styles.card}>
+            <h3>Added in Last 10 Days</h3>
+            <p>{addedLast10Days}</p>
+          </div>
         </div>
       </div>
     </div>
