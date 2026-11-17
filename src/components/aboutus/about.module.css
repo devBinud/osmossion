@@ -1,0 +1,110 @@
+.aboutSection {
+  width: 100%;
+  padding: 80px 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+
+.textSection {
+  flex: 1;
+  min-width: 300px;
+}
+
+/* Eyebrow: small brand label */
+.welcomeText {
+  margin: 0 0 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8B639B;
+}
+
+.subtitletwo {
+  margin: 0 0 22px;
+  font-size: clamp(1.8rem, 3vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2B2963;
+}
+
+.description {
+  margin: 0 0 18px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #55537a;
+}
+
+/* Mission statement */
+.highlight {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: #2B2963;
+}
+
+.imageSection {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+/* White card for the illustration, with a gradient block offset behind it */
+.imageFrame {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+}
+
+.imageFrame::before {
+  content: "";
+  position: absolute;
+  inset: 24px -18px -18px 24px;
+  border-radius: 28px;
+  background: linear-gradient(140deg, #403D88 0%, #8B639B 60%, #AF719D 100%);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #ebe8f3;
+  box-shadow: 0 18px 40px rgba(64, 61, 136, 0.15);
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: 56px 1rem;
+  }
+
+  .container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .highlight {
+    font-size: 1.05rem;
+  }
+
+  .imageFrame::before {
+    inset: 14px -10px -10px 14px;
+  }
+}

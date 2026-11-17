@@ -1,0 +1,43 @@
+.formPlaceholder {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.enquiryText {
+  font-size: 1rem;
+  color: #55537a;
+  margin-bottom: 15px;
+  text-align:start;
+}
+
+.enquiryInput {
+  width: 100%;
+  height:150px;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  resize: none;
+  margin-bottom: 15px;
+}
+.headingText {
+  background-color: #403D88;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 14px 20px;
+}
+@media (max-width: 768px) {
+  .headingText {
+    font-size: 0.93rem;
+  }
+}
+
+
+.whatsappIcon {
+  font-size: 1.4rem;
+}

@@ -1,0 +1,110 @@
+.page {
+  padding: 64px 2rem 88px;
+  background: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.privacyContainer {
+  max-width: 1200px; /* same content width as the rest of the site */
+  margin: 0 auto;
+  line-height: 1.75;
+  color: #55537a;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8B639B;
+}
+
+.headingText {
+  margin: 0 0 14px;
+  font-size: clamp(1.9rem, 4vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2B2963;
+}
+
+.effectiveDate {
+  margin: 0 0 22px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #f7f6fb;
+  font-size: 0.93rem;
+  color: #2B2963;
+}
+
+.subHeading {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2B2963;
+}
+
+.paragraph {
+  margin: 0 0 14px;
+  font-size: 0.97rem;
+}
+
+.list {
+  margin: 0 0 14px;
+  padding-left: 1.25rem;
+  font-size: 0.97rem;
+}
+
+.list li {
+  margin-bottom: 8px;
+}
+
+.list li::marker {
+  color: #8B639B;
+}
+
+.list strong,
+.paragraph strong {
+  color: #2B2963;
+}
+
+.separator {
+  margin: 28px 0;
+  border: none;
+  border-top: 1px solid #ece9f3;
+  opacity: 1;
+}
+
+.contactCard {
+  padding: 20px 22px;
+  border: 1px solid #ece9f3;
+  border-radius: 16px;
+  background: #faf9fd;
+}
+
+.contactCard p {
+  margin: 0 0 4px;
+  font-size: 0.97rem;
+  color: #55537a;
+}
+
+.contactCard strong {
+  color: #2B2963;
+}
+
+.contactCard a {
+  color: #403D88;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contactCard a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 560px) {
+  .page {
+    padding: 48px 1rem 64px;
+  }
+}

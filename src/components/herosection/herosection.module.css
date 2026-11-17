@@ -1,0 +1,197 @@
+/* =========================================================
+   Hero — image-free, brand palette
+   ========================================================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 88px 2rem 104px;
+  font-family: 'Poppins', sans-serif;
+  background:
+    radial-gradient(1100px 520px at 100% 0%, rgba(175, 113, 157, 0.16), transparent 60%),
+    radial-gradient(900px 500px at 0% 100%, rgba(64, 61, 136, 0.12), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f7f6fb 100%);
+}
+
+/* Soft blurred colour blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.blobOne {
+  width: 420px;
+  height: 420px;
+  top: -140px;
+  right: 8%;
+  background: #F8B2B2;
+}
+
+.blobTwo {
+  width: 360px;
+  height: 360px;
+  bottom: -160px;
+  left: -80px;
+  background: #8B639B;
+  opacity: 0.25;
+}
+
+/* Faint dot grid texture */
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(64, 61, 136, 0.12) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: linear-gradient(90deg, transparent 40%, #000 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 40%, #000 100%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 64px;
+}
+
+/* ---------- Left ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 22px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid #e6e1f0;
+  background: rgba(255, 255, 255, 0.8);
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #403D88;
+  box-shadow: 0 4px 14px rgba(64, 61, 136, 0.08);
+}
+
+.badge svg {
+  color: #AF719D;
+}
+
+.heading {
+  margin: 0 0 20px;
+  font-size: clamp(2.2rem, 4.6vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #2B2963;
+}
+
+.gradientText {
+  background: linear-gradient(90deg, #403D88 0%, #8B639B 55%, #AF719D 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.paragraph {
+  max-width: 540px;
+  margin: 0 0 32px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #55537a;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+
+
+
+/* ---------- Right: photo ---------- */
+.visual {
+  position: relative;
+  max-width: 460px;
+  width: 100%;
+  margin-left: auto;
+  padding: 28px 24px;
+}
+
+.imageFrame {
+  position: relative;
+}
+
+/* Gradient block offset behind the photo */
+.imageFrame::before {
+  content: "";
+  position: absolute;
+  inset: 26px -20px -20px 26px;
+  border-radius: 32px;
+  background: linear-gradient(140deg, #403D88 0%, #8B639B 60%, #AF719D 100%);
+  z-index: 0;
+}
+
+.image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 28px;
+  border: 6px solid #fff;
+  box-shadow: 0 30px 60px rgba(64, 61, 136, 0.25);
+}
+
+
+
+
+
+
+
+
+/* ---------- Responsive ---------- */
+@media (max-width: 991px) {
+  .hero {
+    padding: 64px 1.5rem 80px;
+  }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .content {
+    text-align: center;
+  }
+  .paragraph {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .buttons {
+    justify-content: center;
+  }
+  .visual {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero {
+    padding: 48px 1rem 64px;
+  }
+  .badge {
+    font-size: 0.75rem;
+  }
+  .buttons a,
+  .buttons button {
+    width: 100%;
+  }
+  .visual {
+    padding: 22px 6px;
+  }
+}

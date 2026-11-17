@@ -1,0 +1,223 @@
+/* ===== Overlay ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(36, 34, 79, 0.55);
+  backdrop-filter: blur(3px);
+  font-family: 'Poppins', sans-serif;
+  animation: apptFadeIn 0.2s ease;
+}
+
+/* ===== Modal card ===== */
+.modal {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  max-height: calc(100vh - 2rem);
+  overflow-y: auto;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 24px 60px rgba(36, 34, 79, 0.3);
+  animation: apptPopIn 0.25s ease;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 1;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.close:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* ===== Header (brand gradient) ===== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 26px 56px 24px 28px;
+  color: #fff;
+  background: linear-gradient(140deg, #403D88 0%, #8B639B 60%, #AF719D 100%);
+}
+
+
+.title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+
+/* ===== Form ===== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 24px 28px 22px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  min-width: 0;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2B2963;
+}
+
+.inputWrap {
+  position: relative;
+  display: block;
+}
+
+
+
+.input {
+  width: 100%;
+  height: 46px;
+  padding: 0 16px;
+  border: 1.5px solid #e4e1ee;
+  border-radius: 12px;
+  background: #faf9fd;
+  font-family: inherit;
+  font-size: 0.92rem;
+  color: #2B2963;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.input::placeholder {
+  color: #a3a1bb;
+}
+
+.input:focus {
+  border-color: #8B639B;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(139, 99, 155, 0.15);
+}
+
+select.input {
+  appearance: none;
+  cursor: pointer;
+  background-image: linear-gradient(45deg, transparent 50%, #8B639B 50%),
+    linear-gradient(135deg, #8B639B 50%, transparent 50%);
+  background-position: calc(100% - 18px) 50%, calc(100% - 13px) 50%;
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 34px;
+}
+
+.textarea {
+  height: auto;
+  min-height: 88px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.footnote {
+  margin: 2px 0 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #55537a;
+}
+
+.footnote a,
+.successText a {
+  color: #403D88;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footnote a:hover,
+.successText a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Success state ===== */
+.success {
+  padding: 32px 28px 30px;
+  text-align: center;
+}
+
+.successIcon {
+  width: 68px;
+  height: 68px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(140deg, #403D88 0%, #8B639B 60%, #AF719D 100%);
+  box-shadow: 0 8px 18px rgba(64, 61, 136, 0.28);
+}
+
+.successTitle {
+  margin: 0 0 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2B2963;
+}
+
+.successText {
+  margin: 0 0 22px;
+  font-size: 0.93rem;
+  line-height: 1.6;
+  color: #55537a;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 560px) {
+  .header {
+    padding: 22px 52px 20px 20px;
+  }
+  .form {
+    padding: 20px;
+  }
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Animations ===== */
+@keyframes apptFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes apptPopIn {
+  from { opacity: 0; transform: translateY(14px) scale(0.97); }
+  to { opacity: 1; transform: none; }
+}

@@ -1,0 +1,135 @@
+/* =========================================================
+   FAQs — heading on top, accordion below
+   ========================================================= */
+.section {
+  width: 100%;
+  padding: 80px 2rem;
+  font-family: 'Poppins', sans-serif;
+  background: #f7f6fb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  margin: 0 0 14px;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #2B2963;
+}
+
+.description {
+  max-width: 720px;
+  margin: 0 0 36px;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #55537a;
+}
+
+/* ---------- Accordion ---------- */
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faqItem {
+  border: 1px solid #e8e5f0;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(64, 61, 136, 0.04);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faqItem:hover {
+  border-color: #d9d3ea;
+}
+
+.faqItemOpen {
+  border-color: #d4cbe6;
+  box-shadow: 0 12px 30px rgba(64, 61, 136, 0.1);
+}
+
+.faqButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 22px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+
+
+
+.question {
+  flex: 1;
+  font-size: 1.02rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #2B2963;
+}
+
+.toggle {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: #403D88;
+  background: #f1eef8;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.faqItemOpen .toggle {
+  color: #fff;
+  background: linear-gradient(140deg, #403D88, #AF719D);
+  transform: rotate(45deg); /* plus → × */
+}
+
+/* Smooth height animation via grid rows */
+.answerWrap {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faqItemOpen .answerWrap {
+  grid-template-rows: 1fr;
+}
+
+.answerInner {
+  overflow: hidden;
+}
+
+
+.answer {
+  margin: 0;
+  padding: 0 22px 22px;
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: #55537a;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 560px) {
+  .section {
+    padding: 64px 1rem;
+  }
+  .faqButton {
+    padding: 16px;
+    gap: 12px;
+  }
+  .answer {
+    padding: 0 16px 18px;
+  }
+}

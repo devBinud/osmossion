@@ -1,0 +1,204 @@
+/* =========================================================
+   Osmossion — shared design tokens & button system
+   Use these classes for every button / button-like link:
+     os-btn + one variant (+ optional size/width modifier)
+
+   Palette: #F8B2B2 pink · #AF719D mauve · #8B639B purple · #403D88 indigo
+
+   Variants
+     os-btn--primary    Indigo. Main actions: appointments, submit, send, subscribe
+     os-btn--secondary  Purple. Supporting actions: call, enquiry
+     os-btn--outline    Indigo border. Low-emphasis: view all, read more, explore
+     os-btn--light      White. For use on dark / coloured backgrounds
+     os-btn--whatsapp   Green. Anything that opens WhatsApp
+   Modifiers
+     os-btn--sm         Compact (cards)
+     os-btn--block      Full width
+   (Prefixed "os-" so it never clashes with Bootstrap's .btn)
+   ========================================================= */
+
+:root {
+  /* Brand palette */
+  --os-indigo: #403D88;
+  --os-indigo-dark: #2F2C6B;
+  --os-indigo-deep: #24224F; /* footer / dark surfaces */
+  --os-purple: #8B639B;
+  --os-purple-dark: #75528A;
+  --os-mauve: #AF719D;
+  --os-pink: #F8B2B2;
+  --os-pink-tint: #FDEEEE;
+  --os-ink: #2B2963;         /* headings */
+  --os-text: #55537a;        /* body / description text */
+
+  --os-whatsapp: #15803d;
+  --os-whatsapp-dark: #166534;
+
+  --os-font: 'Poppins', sans-serif;
+  --os-btn-radius: 999px;    /* pill */
+  --os-btn-font: var(--os-font);
+
+  /* Make Bootstrap use the site font + text colour too */
+  --bs-body-font-family: var(--os-font);
+  --bs-font-sans-serif: var(--os-font);
+  --bs-body-color: var(--os-text);
+}
+
+/* Default body/description text colour site-wide */
+body {
+  color: var(--os-text);
+}
+
+/* ---- Site-wide typography: Poppins everywhere ---- */
+body,
+h1, h2, h3, h4, h5, h6,
+p, li, a, span, label,
+input, textarea, select, button {
+  font-family: var(--os-font);
+}
+
+.os-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border: 2px solid transparent;
+  border-radius: var(--os-btn-radius);
+  font-family: var(--os-btn-font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.os-btn:hover {
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.os-btn:active {
+  transform: translateY(0);
+}
+
+.os-btn:focus-visible {
+  outline: 3px solid rgba(175, 113, 157, 0.5);
+  outline-offset: 2px;
+}
+
+.os-btn svg {
+  flex-shrink: 0;
+  font-size: 1.1em;
+}
+
+/* ---- Variants ---- */
+/* Brand gradient — same as the Kidney Health Education banner.
+   Drawn at 200% width so hover can slide it (gradients can't
+   transition colours directly). */
+.os-btn--primary,
+.os-btn--secondary {
+  background-image: linear-gradient(110deg, var(--os-indigo) 0%, var(--os-purple) 30%, var(--os-mauve) 50%, var(--os-purple) 70%, var(--os-indigo) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  background-origin: border-box;
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(64, 61, 136, 0.25);
+  transition: background-position 0.45s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+.os-btn--primary:hover,
+.os-btn--secondary:hover {
+  background-position: 100% 50%;
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(64, 61, 136, 0.35);
+}
+
+/* Kept for low-emphasis use; fills with the brand gradient on hover */
+.os-btn--outline {
+  background-color: transparent;
+  border-color: var(--os-indigo);
+  color: var(--os-indigo);
+  background-origin: border-box;
+}
+.os-btn--outline:hover {
+  background-image: linear-gradient(110deg, var(--os-indigo) 0%, var(--os-purple) 60%, var(--os-mauve) 100%);
+  border-color: transparent;
+  color: #fff;
+}
+
+.os-btn--light {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--os-indigo);
+}
+.os-btn--light:hover {
+  background-color: var(--os-pink-tint);
+  border-color: var(--os-pink-tint);
+  color: var(--os-indigo-dark);
+}
+
+/* Transparent with white border — secondary action on gradient / dark backgrounds */
+.os-btn--ghost-light {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.7);
+  color: #fff;
+}
+.os-btn--ghost-light:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: var(--os-indigo);
+}
+
+.os-btn--whatsapp {
+  background-color: var(--os-whatsapp);
+  border-color: var(--os-whatsapp);
+  color: #fff;
+}
+.os-btn--whatsapp:hover {
+  background-color: var(--os-whatsapp-dark);
+  border-color: var(--os-whatsapp-dark);
+  color: #fff;
+}
+
+/* ---- Footer newsletter input (on the dark footer) ---- */
+.footer-newsletter-input {
+  width: 100%;
+  height: 46px;
+  margin-bottom: 0.8rem;
+  padding: 0 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-family: var(--os-font);
+  font-size: 0.93rem;
+  font-weight: 400;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.footer-newsletter-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 400;
+}
+
+.footer-newsletter-input:focus {
+  border-color: var(--os-pink);
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* ---- Modifiers ---- */
+.os-btn--sm {
+  padding: 9px 16px;
+  font-size: 0.875rem;
+}
+
+.os-btn--block {
+  display: flex;
+  width: 100%;
+}
